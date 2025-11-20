@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/features/home_screen/custom_drawer.dart';
+import 'package:news_app/core/widgets/custom_drawer.dart';
 import 'package:news_app/features/home_screen/provider/home_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -8,15 +8,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  var provider =  Provider.of<HomeProvider>(context);
+    var provider = Provider.of<HomeProvider>(context);
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Theme.of(context).secondaryHeaderColor,
+          Visibility(
+            visible: provider.selectedTab==1?true:false,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                color: Theme.of(context).secondaryHeaderColor,
+              ),
             ),
           ),
         ],

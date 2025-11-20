@@ -8,8 +8,23 @@ class ThemeManager {
   static final ThemeData dark = ThemeData(
     primaryColor: ColorsManager.black,
     secondaryHeaderColor: ColorsManager.white,
-
     scaffoldBackgroundColor: ColorsManager.black,
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        padding: REdgeInsets.symmetric(vertical: 16),
+        backgroundColor: ColorsManager.black,
+        foregroundColor: ColorsManager.white,
+        textStyle: GoogleFonts.inter(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.bold,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+      ),
+    ),
     appBarTheme: AppBarTheme(
       scrolledUnderElevation: 0,
       backgroundColor: ColorsManager.black,
@@ -43,6 +58,11 @@ class ThemeManager {
         fontWeight: FontWeight.w500,
         color: ColorsManager.grey,
       ),
+      bodySmall: GoogleFonts.inter(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+        color: ColorsManager.black,
+      )
 
     ),
   );
