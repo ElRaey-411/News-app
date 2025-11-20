@@ -10,6 +10,28 @@ class ThemeManager {
     secondaryHeaderColor: ColorsManager.white,
     scaffoldBackgroundColor: ColorsManager.black,
 
+    inputDecorationTheme: InputDecorationTheme(
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(width: 2.w, color: ColorsManager.white),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(width: 2.w, color: ColorsManager.white),
+      ),
+      labelStyle: GoogleFonts.inter(
+        color: ColorsManager.white,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+      ),
+      hintStyle: GoogleFonts.inter(
+        color: ColorsManager.white,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+      ),
+
+    ),
+
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,

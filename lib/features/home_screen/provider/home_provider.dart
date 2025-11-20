@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/core/models/article_model.dart';
-import 'package:news_app/core/widgets/article_item.dart';
+import '../../../core/models/articles_response/Article.dart';
 import '../../../core/models/category_model.dart';
 import '../home_tabs/categories_tab.dart';
 import '../home_tabs/custom_modal_screen.dart';
@@ -13,6 +12,7 @@ class HomeProvider extends ChangeNotifier {
   int selectedTab = 0;
   int? selectedCategory;
   bool isHome = true;
+  Article? selectedArticle;
 
   void navigateToSources(int index) {
     title = CategoryModel.categories[index].name;
@@ -29,11 +29,12 @@ class HomeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void showModalSheet(BuildContext context) {
+  void showModalSheet(BuildContext context, Article article) {
+    selectedArticle = article;
     showModalBottomSheet(
       useSafeArea: true,
       context: context,
-      builder: (_) => CustomModalScreen(provider: this,),
+      builder: (_) => CustomModalScreen(provider: this,article: article,),
     );
   }
 
@@ -45,18 +46,18 @@ class HomeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  String dateTimeShape(String text){
+    if (text.length > 3) {
+      String newText = text.substring(0, text.length - 4);
+      newText = newText.replaceAll("T", " ").replaceAll("Z", "").replaceAll("-", "/");
+      return newText;
+    } else {
+      return text;
+    }
+  }
+
   List<Widget> tabs = [CategoriesTab(), SourcesTab(),
     DetailsTab()
   ];
 
-  ArticleModel article = ArticleModel(
-    category: CategoryModel.categories[0],
-    title: "Lorem ipsum ",
-    description:
-        "dawda d awd awd awd aikhr;o 8ihsljk n 8yhdw ianwdo8uhawduja nwdp0awd",
-    author: "dddddd",
-    date: "10/11/2020",
-    time: "12:22",
-    imageUrl: CategoryModel.categories[0].darkPhoto
-  );
 }

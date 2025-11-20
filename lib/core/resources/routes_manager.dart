@@ -10,6 +10,7 @@ static const String homeScreen ="home";
 
 static Map<String,WidgetBuilder> routes ={
   homeScreen:(context)=>ChangeNotifierProvider(
+
     create:(context)=>HomeProvider(),
       child: HomeScreen()),
 };
