@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/models/category_model.dart';
 import '../../../core/widgets/category_item.dart';
+import '../provider/home_provider.dart';
 
 class CategoriesTab extends StatelessWidget {
-  const CategoriesTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider =  Provider.of<HomeProvider>(context);
     return Column(
       children: [
         Text(
@@ -20,6 +22,9 @@ class CategoriesTab extends StatelessWidget {
             itemCount:  CategoryModel.categories.length,
             itemBuilder: (context, index) {
               return CategoryItem(
+                onTap: (){
+                  provider.navigateToSources(index);
+                },
                 photoPath: CategoryModel.categories[index].darkPhoto,);
             }
           ),

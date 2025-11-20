@@ -11,14 +11,15 @@ class ThemeManager {
 
     scaffoldBackgroundColor: ColorsManager.black,
     appBarTheme: AppBarTheme(
-        scrolledUnderElevation: 0,
+      scrolledUnderElevation: 0,
       backgroundColor: ColorsManager.black,
       titleTextStyle: GoogleFonts.inter(
-          color: ColorsManager.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w500),
+        color: ColorsManager.white,
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+      ),
       centerTitle: true,
-      iconTheme: IconThemeData(color: ColorsManager.white)
+      iconTheme: IconThemeData(color: ColorsManager.white),
     ),
     drawerTheme: DrawerThemeData(
       backgroundColor: ColorsManager.black,
@@ -32,8 +33,17 @@ class ThemeManager {
         fontWeight: FontWeight.w500,
         color: ColorsManager.white,
       ),
-      )
+      headlineMedium: GoogleFonts.inter(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.bold,
+        color: ColorsManager.white,
+      ),
+      headlineSmall: GoogleFonts.inter(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w500,
+        color: ColorsManager.grey,
+      ),
 
-
+    ),
   );
 }

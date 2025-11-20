@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItem extends StatelessWidget {
-   CategoryItem({super.key, required this.photoPath, this.onTap});
+   CategoryItem({super.key, required this.photoPath,required this.onTap});
   String photoPath;
-  final Function? onTap;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,9 @@ class CategoryItem extends StatelessWidget {
       padding: REdgeInsets.symmetric(vertical: 8,horizontal: 16),
       child: InkWell(
         splashColor: Colors.transparent,
-        onTap: (){},
+        onTap: (){
+          onTap();
+        },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.asset(photoPath,
