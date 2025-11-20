@@ -15,15 +15,12 @@ class HomeScreen extends StatelessWidget {
           Visibility(
             visible: provider.selectedTab==1?true:false,
             child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: Theme.of(context).secondaryHeaderColor,
-              ),
-            ),
+              icon: Icon(Icons.search),
+              onPressed:(){}
+            )
           ),
         ],
-        title: Text(provider.title),
+        title: Text(provider.title!),
       ),
       drawer: Drawer(child: CustomDrawer()),
       body: provider.tabs[provider.selectedTab],
