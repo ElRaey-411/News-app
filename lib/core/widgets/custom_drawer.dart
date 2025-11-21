@@ -10,6 +10,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<HomeProvider>(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -34,6 +35,7 @@ class CustomDrawer extends StatelessWidget {
             visible: !provider.isHome,
             child: InkWell(
               onTap:(){ provider.navigateToHome();
+                provider.isSearch=false;
               Navigator.pop(context);
               },
               child: Row(

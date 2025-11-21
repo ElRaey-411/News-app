@@ -5,14 +5,33 @@ import '../../../core/models/category_model.dart';
 import '../home_tabs/categories_tab.dart';
 import '../home_tabs/custom_modal_screen.dart';
 import '../home_tabs/details_tab.dart';
-import '../home_tabs/sources_tab.dart';
+import '../home_tabs/view_tab.dart';
 
 class HomeProvider extends ChangeNotifier {
+  TextEditingController searchController = TextEditingController();
   String title = "Home";
   int selectedTab = 0;
   int? selectedCategory;
   bool isHome = true;
+  bool isSearch = false;
   Article? selectedArticle;
+
+ void onSearchClear(){
+   searchController.clear();
+   notifyListeners();
+ }
+
+  void cancelSearch(){
+    isSearch = false;
+    searchController.clear();
+    notifyListeners();
+  }
+
+  void onSearch(){
+    isSearch = true;
+    notifyListeners();
+  }
+
 
   void navigateToSources(int index) {
     title = CategoryModel.categories[index].name;
@@ -56,7 +75,7 @@ class HomeProvider extends ChangeNotifier {
     }
   }
 
-  List<Widget> tabs = [CategoriesTab(), SourcesTab(),
+  List<Widget> tabs = [CategoriesTab(), ViewTab(),
     DetailsTab()
   ];
 

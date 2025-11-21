@@ -55,10 +55,10 @@ class ArticleItem extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h,),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(article.author??"",style: Theme.of(context).textTheme.headlineSmall),
-                    Text(provider.dateTimeShape(article.publishedAt??""),style: Theme.of(context).textTheme.headlineSmall),
+                    Expanded(child: Text(article.author??"",style: Theme.of(context).textTheme.headlineSmall)),
+                    Spacer(),
+                    Expanded(child: Text(provider.dateTimeShape(article.publishedAt??""),style: Theme.of(context).textTheme.headlineSmall)),
                   ]
                 ),
               ]

@@ -15,7 +15,7 @@ class CustomModalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: REdgeInsets.all(16),
-      height: 361.h,
+      height: 380.h,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).secondaryHeaderColor,
@@ -53,6 +53,7 @@ class CustomModalScreen extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               provider.navigateToDetails();
+              provider.cancelSearch();
               Navigator.pop(context);
             },
             child: Text("View Full Article"),
