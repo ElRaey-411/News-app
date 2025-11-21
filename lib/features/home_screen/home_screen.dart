@@ -10,16 +10,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<HomeProvider>(context);
     return Scaffold(
-      appBar:provider.isSearch?null : AppBar(
+      appBar: AppBar(
         actions: [
           Visibility(
             visible: provider.selectedTab==1?true:false,
             child: IconButton(
-              icon: Icon(Icons.search),
-              onPressed:(){
-              provider.onSearch();
-              }
-            )
+              onPressed: () {},
+              icon: Icon(
+                Icons.search,
+                color: Theme.of(context).secondaryHeaderColor,
+              ),
+            ),
           ),
         ],
         title: Text(provider.title),

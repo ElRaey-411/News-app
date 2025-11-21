@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:news_app/config/api/api_service.dart';
 import '../../../core/models/articles_response/Article.dart';
@@ -28,5 +27,4 @@ class ArticlesProvider extends ChangeNotifier {
       },
     );
   }
-
 }

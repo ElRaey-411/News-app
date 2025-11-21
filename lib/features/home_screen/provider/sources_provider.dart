@@ -8,8 +8,6 @@ class SourcesProvider extends ChangeNotifier{
   List<Source> sources = [];
   bool isLoading = false;
   String? errorMessage;
-  int selectedSource =0;
-
 
  Future<void> loadSources(int selectedCategory) async {
     isLoading = true;
@@ -26,10 +24,5 @@ class SourcesProvider extends ChangeNotifier{
       isLoading = false;
       notifyListeners();
     });
-  }
-
-  void changeSource(int index) {
-    selectedSource = index;
-    notifyListeners();
   }
 }
