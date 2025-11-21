@@ -4,7 +4,89 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/resources/colors_manager.dart';
 
 class ThemeManager {
-  static final ThemeData light = ThemeData();
+  static final ThemeData light = ThemeData(
+    primaryColor: ColorsManager.white,
+    secondaryHeaderColor: ColorsManager.black,
+    scaffoldBackgroundColor: ColorsManager.white,
+
+    inputDecorationTheme: InputDecorationTheme(
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(width: 1.w, color: ColorsManager.black),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(width: 1.w, color: ColorsManager.black),
+      ),
+      labelStyle: GoogleFonts.inter(
+        color: ColorsManager.black,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+      ),
+      hintStyle: GoogleFonts.inter(
+        color: ColorsManager.black,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+      ),
+
+    ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        padding: REdgeInsets.symmetric(vertical: 16),
+        backgroundColor: ColorsManager.white,
+        foregroundColor: ColorsManager.black,
+        textStyle: GoogleFonts.inter(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.bold,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+      ),
+    ),
+    appBarTheme: AppBarTheme(
+      scrolledUnderElevation: 0,
+      backgroundColor: ColorsManager.white,
+      titleTextStyle: GoogleFonts.inter(
+        color: ColorsManager.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+      ),
+      centerTitle: true,
+      iconTheme: IconThemeData(color: ColorsManager.black),
+    ),
+    drawerTheme: DrawerThemeData(
+      backgroundColor: ColorsManager.white,
+      width: 269.w,
+    ),
+    iconTheme: IconThemeData(color: ColorsManager.black),
+
+    textTheme: TextTheme(
+        titleMedium: GoogleFonts.inter(
+          fontSize: 24.sp,
+          fontWeight: FontWeight.w500,
+          color: ColorsManager.black,
+        ),
+        headlineMedium: GoogleFonts.inter(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.bold,
+          color: ColorsManager.black,
+        ),
+        headlineSmall: GoogleFonts.inter(
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w500,
+          color: ColorsManager.grey,
+        ),
+        bodySmall: GoogleFonts.inter(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w500,
+          color: ColorsManager.white,
+        )
+
+    ),
+  );
   static final ThemeData dark = ThemeData(
     primaryColor: ColorsManager.black,
     secondaryHeaderColor: ColorsManager.white,
@@ -13,11 +95,11 @@ class ThemeManager {
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16.r),
-        borderSide: BorderSide(width: 2.w, color: ColorsManager.white),
+        borderSide: BorderSide(width: 1.w, color: ColorsManager.white),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16.r),
-        borderSide: BorderSide(width: 2.w, color: ColorsManager.white),
+        borderSide: BorderSide(width: 1.w, color: ColorsManager.white),
       ),
       labelStyle: GoogleFonts.inter(
         color: ColorsManager.white,
