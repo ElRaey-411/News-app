@@ -10,7 +10,7 @@ import '../../core/models/sources_response/SourcesResponse.dart';
 import '../../core/resources/const_manager.dart';
 
 class ApiService {
-  static Future<Either<SourcesResponse, String>> getSources(
+   Future<Either<SourcesResponse, String>> getSources(
     CategoryModel category,
   ) async {
     Uri url = Uri.https(ConstManager.baseUrl, ConstManager.sourcesEndPoint, {
@@ -37,7 +37,7 @@ class ApiService {
     }
   }
 
- static Future<Either<List<Article>, String>> getArticles(
+  Future<Either<List<Article>, String>> getArticles(
     Source source, [
     String? searchKey,
   ]) async {

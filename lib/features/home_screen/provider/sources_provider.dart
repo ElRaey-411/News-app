@@ -1,10 +1,11 @@
 import 'package:flutter/widgets.dart';
-
-import '../../../config/api/api_service.dart';
+import 'package:news_app/repos/sources_repo.dart';
 import '../../../core/models/category_model.dart';
 import '../../../core/models/sources_response/Sources.dart';
 
 class SourcesProvider extends ChangeNotifier{
+  SourcesRepo sourcesRepo;
+  SourcesProvider({required this.sourcesRepo});
   List<Source> sources = [];
   bool isLoading = false;
   String? errorMessage;
@@ -14,7 +15,7 @@ class SourcesProvider extends ChangeNotifier{
  Future<void> loadSources(int selectedCategory) async {
     isLoading = true;
     notifyListeners();
-    var response = await ApiService.getSources(
+    var response = await sourcesRepo.getSources(
       CategoryModel.categories[selectedCategory],
     );
     response.fold((sourcesResponse) {

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:news_app/core/models/sources_response/Sources.dart';
 import 'package:news_app/features/home_screen/provider/articles_provider.dart';
 import 'package:provider/provider.dart';
-import '../../../config/api/api_service.dart';
 import '../../../core/models/articles_response/Article.dart';
-import '../../../core/models/category_model.dart';
 import '../../../core/widgets/article_item.dart';
+import '../../../data/api/api_service.dart';
+import '../../../data/data_source/articles_data_source/articles_api_data_source.dart';
+import '../../../data/data_source/sources_data_source/sources_api_data_source.dart';
+import '../../../data/repo_impl/articles_repo_impl.dart';
+import '../../../data/repo_impl/sources_repo_impl.dart';
 import '../provider/home_provider.dart';
 import '../provider/sources_provider.dart';
 
@@ -26,8 +28,15 @@ class _ViewTabState extends State<ViewTab> {
   @override
   void initState() {
     super.initState();
-    sourcesProvider = SourcesProvider();
-    articlesProvider = ArticlesProvider();
+    sourcesProvider = SourcesProvider(sourcesRepo: SourcesRepoImpl(
+      sourcesDataSource: SourcesApiDataSource(apiService: ApiService()),
+    )
+    );
+    articlesProvider = ArticlesProvider(
+      articlesRepo: ArticlesRepoImpl(
+        articlesDataSource: ArticlesApiDataSource(apiService: ApiService()),
+      ),
+    );
   }
 
   @override
