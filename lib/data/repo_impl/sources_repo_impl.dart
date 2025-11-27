@@ -1,13 +1,11 @@
 import 'package:dartz/dartz.dart';
-
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/models/category_model.dart';
-
 import 'package:news_app/core/models/sources_response/SourcesResponse.dart';
-
 import '../../repos/sources_repo.dart';
 import '../data_source/sources_data_source/sources_data_source.dart';
 
-
+@Singleton(as: SourcesRepo)
 class SourcesRepoImpl implements SourcesRepo{
   SourcesDataSource sourcesDataSource;
   SourcesRepoImpl({required this.sourcesDataSource});

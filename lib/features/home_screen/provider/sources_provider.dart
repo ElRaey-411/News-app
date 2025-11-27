@@ -1,8 +1,9 @@
 import 'package:flutter/widgets.dart';
+import 'package:injectable/injectable.dart';
 import 'package:news_app/repos/sources_repo.dart';
 import '../../../core/models/category_model.dart';
 import '../../../core/models/sources_response/Sources.dart';
-
+@singleton
 class SourcesProvider extends ChangeNotifier{
   SourcesRepo sourcesRepo;
   SourcesProvider({required this.sourcesRepo});

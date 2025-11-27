@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import '../../../core/models/articles_response/Article.dart';
 import '../../../core/models/sources_response/Sources.dart';
 import '../../../repos/articles_repo.dart';
-
+@singleton
 class ArticlesProvider extends ChangeNotifier {
   ArticlesRepo articlesRepo;
   ArticlesProvider({required this.articlesRepo});

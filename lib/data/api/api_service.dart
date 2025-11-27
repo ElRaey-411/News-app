@@ -2,13 +2,14 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:news_app/core/models/articles_response/ArticlesResponse.dart';
 import '../../core/models/articles_response/Article.dart';
 import '../../core/models/category_model.dart';
 import '../../core/models/sources_response/Sources.dart';
 import '../../core/models/sources_response/SourcesResponse.dart';
 import '../../core/resources/const_manager.dart';
-
+@singleton
 class ApiService {
    Future<Either<SourcesResponse, String>> getSources(
     CategoryModel category,

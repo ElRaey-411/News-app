@@ -10,8 +10,8 @@ class PrefsManager{
 
 
   static void saveTheme(ThemeMode themeMode) {
-    String SavedTheme= themeMode==ThemeMode.light? 'light': 'dark' ;
-    prefs.setString(themeKey, SavedTheme);
+    String savedTheme= themeMode==ThemeMode.light? 'light': 'dark' ;
+    prefs.setString(themeKey, savedTheme);
   }
   static ThemeMode? getTheme(){
      String? savedTheme = prefs.getString(themeKey);

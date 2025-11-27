@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-
 import '../../../core/models/articles_response/Article.dart';
 import '../provider/home_provider.dart';
 
 class CustomModalScreen extends StatelessWidget {
-  CustomModalScreen({super.key, required this.provider, required this.article});
+  const CustomModalScreen({super.key, required this.provider, required this.article});
 
   final HomeProvider provider;
-  Article article;
+  final Article article;
 
   @override
   Widget build(BuildContext context) {

@@ -3,10 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'config/providers/ConfigProvider.dart';
 import 'config/theme_manager.dart';
+import 'core/di/get_it.dart';
 import 'core/prefs_manager/prefs_manager.dart';
 import 'core/resources/routes_manager.dart';
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
   await PrefsManager.init();
   runApp(ChangeNotifierProvider(
     create: (context) => ConfigProvider(),

@@ -7,6 +7,8 @@ import '../../../core/widgets/category_item.dart';
 import '../provider/home_provider.dart';
 
 class CategoriesTab extends StatelessWidget {
+  const CategoriesTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<HomeProvider>(context);

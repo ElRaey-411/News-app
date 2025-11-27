@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/models/article_model.dart';
 import '../../../core/models/articles_response/Article.dart';
 import '../../../core/models/category_model.dart';
 import '../home_tabs/categories_tab.dart';
@@ -62,6 +61,7 @@ class HomeProvider extends ChangeNotifier {
     selectedCategory = null;
     selectedTab = 0;
     isHome = true;
+    isSearch = false;
     notifyListeners();
   }
 

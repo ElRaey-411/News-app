@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItem extends StatelessWidget {
-   CategoryItem({super.key, required this.photoPath,required this.onTap});
-  String photoPath;
+  const CategoryItem({super.key, required this.photoPath,required this.onTap});
+  final String photoPath;
   final Function onTap;
 
   @override

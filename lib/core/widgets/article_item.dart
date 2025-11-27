@@ -7,8 +7,8 @@ import '../../features/home_screen/provider/home_provider.dart';
 import '../models/articles_response/Article.dart';
 
 class ArticleItem extends StatelessWidget {
-  ArticleItem({super.key, required this.article});
-  Article article;
+ const ArticleItem({super.key, required this.article});
+ final Article article;
 
 
   @override

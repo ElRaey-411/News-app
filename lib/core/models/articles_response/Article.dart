@@ -1,5 +1,3 @@
-
-
 import '../sources_response/Sources.dart';
 
 class Article {

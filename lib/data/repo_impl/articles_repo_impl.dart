@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:news_app/core/models/articles_response/Article.dart';
 
@@ -6,7 +7,7 @@ import 'package:news_app/core/models/sources_response/Sources.dart';
 
 import '../../repos/articles_repo.dart';
 import '../data_source/articles_data_source/articles_data_source.dart';
-
+@Singleton(as: ArticlesRepo)
 class ArticlesRepoImpl implements ArticlesRepo{
 
   ArticlesRepoImpl({required this.articlesDataSource});
